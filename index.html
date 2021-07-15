@@ -1,0 +1,33 @@
+<!doctype html>
+    <html>
+
+        <head>
+            <meta charset="utf-8">
+            <style>
+                h1 {color : blue;
+                    text-align : center;
+                    font-size : 200%;}
+                p  {color : green;
+                    text-align : center;
+                    font-size : 150%;}
+            </style>
+
+            <title>socket.io 테스트</title>
+        </head>
+
+    <body>
+
+        <h1>안녕하세요!</h1>
+        <p>socket.io 테스트 입니다.</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:3000');
+            socket.on('news', function (data) {
+                console.log(data);
+                socket.emit('client login', { clientData: '클라이언트 접속' });
+            });
+        </script>
+    </body>
+
+</html>
