@@ -18,7 +18,7 @@ function handler(req, res) {
 }
 
 io.on('connection', function(socket){
-    socket.emit('news', { serverData: "¼­¹ö ÀÛµ¿" });
+    socket.emit('news', { serverData: "ì„œë²„ ì‘ë™" });
 
     socket.on('client login', function (data) {
         console.log(data);
